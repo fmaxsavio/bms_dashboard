@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EV BMS Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>EV Battery Management System</h1>
+
+<!-- MAIN DASHBOARD -->
+<div id="mainSection">
+    <div class="dashboard">
+        <div class="card clickable" id="voltageCard">
+            <h2>Total Voltage</h2>
+            <p id="totalVoltage">--</p>
+        </div>
+        <div class="card clickable" id="currentCard">
+            <h2>Total Current</h2>
+            <p id="totalCurrent">--</p>
+        </div>
+        <div class="card clickable" id="socCard">
+            <h2>Average SoC</h2>
+            <p id="avgSOC">--</p>
+        </div>
+        <div class="card clickable" id="tempCard">
+            <h2>Average Temp</h2>
+            <p id="avgTemp">--</p>
+        </div>
+        <div class="card">
+            <h2>Total Power</h2>
+            <p id="totalPower">--</p>
+        </div>
+        <div class="card">
+            <h2>Status</h2>
+            <p id="status">NO DATA</p>
+        </div>
+    </div>
+</div>
+
+<!-- CELL VIEW -->
+<div id="cellSection" style="display:none;">
+    <button onclick="showSection('mainSection')">⬅ Back</button>
+    <h2>Cell Details</h2>
+    <div id="cellContainer"></div>
+
+    <h2>Thermal Heatmap</h2>
+    <div id="heatmap"></div>
+
+    <h2>Battery Pack Visualization</h2>
+    <div id="batteryPack"></div>
+</div>
+
+<!-- GRAPH -->
+<canvas id="chart"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
